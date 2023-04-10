@@ -1,5 +1,5 @@
 import { ScrollArea, Table } from "@mantine/core";
-import { header, body } from "../utils";
+import { header, body, convertTime } from "../utils";
 import { useNavigate, Link } from "react-router-dom";
 
 function TableView() {
@@ -27,7 +27,7 @@ function TableView() {
    <td>{element.model}</td>
    <td>{element.color}</td> */}
    {/* <td>{element.registration}</td> */}
-   <td>{element.date_parked}</td>
+   <td>{convertTime(element.date_parked)}</td>
   </tr>
  ));
 

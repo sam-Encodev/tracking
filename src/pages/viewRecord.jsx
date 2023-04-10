@@ -1,5 +1,5 @@
 import { Text, Space, List, Title } from "@mantine/core";
-import { body } from "../utils";
+import { body, convertTime } from "../utils";
 import { useLoaderData } from "react-router-dom";
 
 export async function loader({ params }) {
@@ -9,13 +9,6 @@ export async function loader({ params }) {
  return { filteredData };
 }
 
-const convertTime = (unixTimestamp) => {
- const milliseconds = unixTimestamp * 1000;
- const dateObject = new Date(milliseconds);
- const humanDateFormat = dateObject.toLocaleString();
-
- return humanDateFormat;
-};
 
 function ViewRecords() {
  const { filteredData } = useLoaderData();
