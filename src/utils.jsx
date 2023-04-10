@@ -9,7 +9,7 @@ import Dashboard from "./pages/dashboard";
 import Records from "./pages/records";
 import Billing from "./pages/billing";
 import Users from "./pages/users";
-import Settings from "./pages/Settings";
+import Settings from "./pages/settings";
 
 export const header = [
  { id: 1, name: "Name" },

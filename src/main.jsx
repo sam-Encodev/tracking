@@ -8,7 +8,7 @@ import Dashboard from "./pages/dashboard";
 import Records from "./pages/records";
 import Billing from "./pages/billing";
 import Users from "./pages/users";
-import Settings from "./pages/Settings";
+import Settings from "./pages/settings";
 import "./index.css";
 import ViewRecords, { loader as recordLoader } from "./pages/viewRecord";
 
