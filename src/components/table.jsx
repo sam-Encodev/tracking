@@ -1,6 +1,6 @@
 import { ScrollArea, Table } from "@mantine/core";
 import { header, body } from "../utils";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function TableView() {
  const navigate = useNavigate();
@@ -14,7 +14,12 @@ function TableView() {
 
  const rows = body.map((element) => (
   <tr key={element.id} onClick={() => handleRoute(element.id)}>
-   <td colSpan={1}>{element.name}</td>
+   <td colSpan={1}>
+    <Link key={element.id} to={`/records/${element.id})`}>
+     <>{element.name}</>
+    </Link>
+   </td>
+
    <td>{element.email}</td>
    <td>{element.phone_number}</td>
    {/* <td>{element.address}</td> */}
