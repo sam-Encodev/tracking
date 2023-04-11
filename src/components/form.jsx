@@ -21,14 +21,14 @@ function Demo({ onClose }) {
  const form = useForm({
   initialValues: {
    id: body.length+1,
-   name: "Kwame",
-   email: "jones@gmail.com",
-   phone_number: "0244000000",
-   address: "GH-TY-200",
-   manufacturer: "Toyota",
-   model: "Vitz",
-   color: "White",
-   registration: "GH-22022-S",
+   name: "",
+   email: "",
+   phone_number: "",
+   address: "",
+   manufacturer: "",
+   model: "",
+   color: "",
+   registration: "",
    date_parked: "",
   },
 
