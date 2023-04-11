@@ -6,16 +6,24 @@ import {
  hasLength,
  matches,
 } from "@mantine/form";
-import { Button, Group, TextInput, NumberInput, Box , ColorPicker} from "@mantine/core";
+import {
+ Button,
+ Group,
+ TextInput,
+ NumberInput,
+ Box,
+ ColorPicker,
+} from "@mantine/core";
 import { DateInput } from "@mantine/dates";
-import { notifications } from "@mantine/notifications";
+import { body } from "../utils";
 
-function Demo() {
+function Demo({ onClose }) {
  const form = useForm({
   initialValues: {
+   id: body.length++,
    name: "",
    email: "",
-   phone: "",
+   phone_number: "",
    address: "",
    manufacturer: "",
    model: "",
@@ -27,7 +35,8 @@ function Demo() {
   validate: {
    name: (value) => (value.length < 2 ? "Name is too short" : null),
    email: (value) => (value.length < 2 ? "Email is too short" : null),
-   phone: (value) => (value.length < 2 ? "Phone Number is too short" : null),
+   phone_number: (value) =>
+    value.length < 2 ? "Mobile Number is too short" : null,
    address: (value) => (value.length < 2 ? "Address is too short" : null),
    manufacturer: (value) =>
     value.length < 2 ? "Manufacturer is too short" : null,
@@ -46,10 +55,14 @@ function Demo() {
    maw={400}
    mx="auto"
    onSubmit={form.onSubmit(() => {
-    console.log({ form: form.values });
+    // console.log(form.values);
+
+    body.push(form.values);
+    onClose();
    })}
   >
    <TextInput
+    data-autofocus
     label="Name"
     placeholder="name"
     mt="md"
@@ -63,9 +76,9 @@ function Demo() {
    />
    <TextInput
     label="Mobile Number"
-    placeholder="Moobile Number"
+    placeholder="Mobile Number"
     mt="md"
-    {...form.getInputProps("phone")}
+    {...form.getInputProps("phone_number")}
    />
 
    <TextInput

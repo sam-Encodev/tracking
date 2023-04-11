@@ -15,7 +15,7 @@ function TableView() {
  const rows = body.map((element) => (
   <tr key={element.id} onClick={() => handleRoute(element.id)}>
    <td colSpan={1}>
-    <Link key={element.id} to={`/records/${element.id})`}>
+    <Link to={`/records/${element.id})`}>
      <>{element.name}</>
     </Link>
    </td>

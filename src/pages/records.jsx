@@ -1,15 +1,21 @@
 import { Text, Space } from '@mantine/core';
 import TableView from "../components/table";
 import AddButton from "../components/button";
+import Modal from '../components/modal'
+import { useDisclosure } from '@mantine/hooks';
 
 function Records() {
+    const [opened, { open, close }] = useDisclosure(false);
  return (
-  <div>
+  <>
    <p>Records</p>
-   <AddButton />
+   <AddButton open={open} />
    <Space h="md" />
    <TableView />
-  </div>
+
+
+   <Modal opened={opened}  close={close}/>
+  </>
  );
 }
 
